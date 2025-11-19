@@ -43,7 +43,7 @@ class Solution2 {
     }
 }
 
-class kLength {
+class Distance1s_1437 {
     public static void main(String args[]) {
         int[] binaryArr = { 0,1, 0, 0, 0, 1, 0, 0, 1 };
 
