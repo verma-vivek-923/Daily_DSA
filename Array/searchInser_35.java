@@ -44,10 +44,10 @@ public class searchInser_35 {
          int t=4;
          
          Solution s1=new Solution();
-         int r=s1.foundIndex(arr, t);
+         int r=s1.searchInsert(arr, t);
          System.out.println(r);
 
-        System.out.println(s1.foundIndex(arr2, 7)); 
-        System.out.println(s1.foundIndex(arr2, 4)); 
+        System.out.println(s1.searchInsert(arr2, 7)); 
+        System.out.println(s1.searchInsert(arr2, 4)); 
     }
 }
