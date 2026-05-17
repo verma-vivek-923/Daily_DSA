@@ -22,12 +22,13 @@ class Solution {
 
             boolean isHyphenValid = false;
 
-            // if (ch == '-') {
-            //     Character.isLowerCase(ch-1);
-            //     Character.isLowerCase(ch+1);
-            // }
+            if ((ch == '-') && ((i > 0 && i < str.length() - 1) && Character.isLowerCase(str.charAt(i - 1))
+                    && Character.isLowerCase(str.charAt(i + 1)))) {
+                isHyphenValid = true;
+            }
 
-            if (isLetter) {
+            if (isLetter || isHyphenValid) {
+                System.out.println(isHyphenValid);
                 sb.append(ch);
             } else {
                 if (sb.length() > 0) {
