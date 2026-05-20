@@ -1,1 +1,2 @@
- System.out.println("res="+res+"L="+l+"r="+r);
+ System.out.println("list=" +
+            java.
