@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 class Solution {
@@ -35,12 +36,21 @@ class Solution {
 
 class minSwapZeroToEnd {
     public static void main(String[] args) {
-        Solution s1 = new Solution();
+        // Solution s1 = new Solution();
 
-        System.out.println(s1.minimumSwaps(new int[] { 0, 1, 0, 3, 12 }));
-        System.out.println(s1.minimumSwaps(new int[] { 0, 1, 0, 2 }));
-        System.out.println(s1.minimumSwaps(new int[] { 1, 2, 0 }));
-        System.out.println(s1.minimumSwaps(new int[] { 0, 0 }));
-        System.out.println(s1.minimumSwaps(new int[] { 0, 0, 0, 57 }));
+        // System.out.println(s1.minimumSwaps(new int[] { 0, 1, 0, 3, 12 }));
+        // System.out.println(s1.minimumSwaps(new int[] { 0, 1, 0, 2 }));
+        // System.out.println(s1.minimumSwaps(new int[] { 1, 2, 0 }));
+        // // System.out.println(s1.minimumSwaps(new int[] { 0, 0 }));
+        // System.out.println(s1.minimumSwaps(new int[] { 0, 0, 0, 57 }));
+
+        ArrayList<Integer> arr=new ArrayList<>();
+
+        arr.add(5);
+        arr.add(2);
+        arr.add(3);
+        arr.add(9);
+
+        System.out.println(arr.get(0));
     }
 }
