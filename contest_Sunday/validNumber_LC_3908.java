@@ -13,13 +13,17 @@ class Solution {
             return false;
         }
 
-        for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i) == ch) {
-                System.out.println(str.charAt(i));
-                System.out.println(x);
-                return true;
-            }
+        if(str.contains(String.valueOf(ch))){
+            return true;
         }
+
+        // for (int i = 1; i < str.length(); i++) {
+        //     if (str.charAt(i) == ch) {
+        //         System.out.println(str.charAt(i));
+        //         System.out.println(x);
+        //         return true;
+        //     }
+        // }
 
         return false;
     }
