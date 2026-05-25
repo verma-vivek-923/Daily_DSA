@@ -5,7 +5,7 @@ class Solution {
         double desc=0;
         int b=0;
 
-        for(int i=0;i<nums.length;i++){
+        for(int i=0;i<nums.length-1;i++){
                  if(b==0 && nums[i]<nums[i+1]){
                     //  System.out.println("v="+i);
                     ascd+=nums[i];
