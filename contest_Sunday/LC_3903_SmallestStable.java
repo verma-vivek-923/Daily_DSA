@@ -3,9 +3,40 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// Optimized
+class Solution {
+    public int firstStableIndex(int[] nums, int k) {
+        int n = nums.length;
+        int max = nums[0], min = Integer.MAX_VALUE, minIdx=0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+                minIdx = i;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > max) {
+                max = nums[i];
+            }
+            if (i > minIdx) {
+                min=Integer.MAX_VALUE;
+                for (int j = i; j < n; j++) {
+                    if (nums[j] < min) {
+                        min = nums[j];
+                    }
+                }
+            }
+            int instb = max - min;
+            if (instb <= k) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
 
 // Brute Force
-class Solution{
+class Solution2{
     public int firstStableIndex(int[] nums,int k){
         int n=nums.length;
         ArrayList<Integer> stable=new ArrayList<>();
