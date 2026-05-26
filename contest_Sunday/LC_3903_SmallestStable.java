@@ -1,6 +1,7 @@
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 // Optimized
@@ -35,32 +36,27 @@ class Solution {
     }
 }
 
-// Brute Force
-class Solution2{
+// More Optimize
+class Solution_t{
     public int firstStableIndex(int[] nums,int k){
         int n=nums.length;
+        int max=0;
+        int[] min=new int[n];
+        min[n-1]=nums[n-1];
         ArrayList<Integer> stable=new ArrayList<>();
 
+        for(int i=n-2;i>=0;i--){
+            min[i]=Math.min(nums[i],min[i+1]);
+        }
+        
         for(int i=0;i<n;i++){
-            int max=0,min=Integer.MAX_VALUE;
-
-            for(int j=0;j<=i;j++){
-                if(nums[j]>max){
-                    max=nums[j];
-                }
-            }
-            for(int j=i;j<n;j++){
-                if(nums[j]<min){
-                    min=nums[j];
-                }
-            }
-            // System.out.println("MAX="+max+" | MIn="+min);
-            int instb=max-min;
-            // System.out.println("I="+instb);
+                max=Math.max(nums[i], max);
+            int instb=max-min[i];
             if(instb<=k){   
                 return i; 
             }
         }
+    
         return -1;
     }
 }
@@ -69,7 +65,7 @@ class Solution2{
 
 public class LC_3903_SmallestStable {
      public static void main(String[] args) {
-        Solution s1=new Solution();
+        Solution_t s1=new Solution_t();
 
         System.out.println(s1.firstStableIndex(new int[]{5,0,1,4}, 3));
         System.out.println(s1.firstStableIndex(new int[]{3,2,1}, 1));
