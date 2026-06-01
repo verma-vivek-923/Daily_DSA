@@ -2,16 +2,16 @@ class Solution {
     public double myPow(double x, int n) {
         double pow=1;
 
-        if(n<0){
-            x=1/x;
-            n=-n;
-        }
+        // if(n<0){
+        //     x=1/x;
+        //     n=-n;
+        // }
         
-        for(double i=0;i<n;i++){
-            pow*=x;
-        }
+        // for(double i=0;i<n;i++){
+        //     pow*=x;
+        // }
 
-        // pow=Math.pow(x, n);
+        pow=Math.pow(x, n);
         return pow;
     }
 }
