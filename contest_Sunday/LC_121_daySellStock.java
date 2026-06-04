@@ -1,5 +1,20 @@
 class Solution {
     public int maxProfit(int[] prices) {
+          int minv=Integer.MAX_VALUE;
+          int maxp=0;
+          int n=prices.length;
+
+          for(int i :prices){
+               minv= Math.min(minv, i);
+               int pr=i-minv;
+               maxp=Math.max(pr,maxp);
+          }
+       return maxp;
+    }
+}
+
+class Solution2 {
+    public int maxProfit(int[] prices) {
         int maxp = 0, n = prices.length;
         int minv = prices[n - 1], maxv = 0, mini = n - 1, maxi = 0;
 
@@ -30,8 +45,8 @@ public class LC_121_daySellStock {
     public static void main(String[] args) {
         Solution s1 = new Solution();
 
-        // System.out.println(s1.maxProfit(new int[] { 7, 1, 5, 3, 6, 4 }));
-        // System.out.println(s1.maxProfit(new int[] { 7, 6, 4, 3, 1 }));
+        System.out.println(s1.maxProfit(new int[] { 7, 1, 5, 3, 6, 4 }));
+        System.out.println(s1.maxProfit(new int[] { 7, 6, 4, 3, 1 }));
         System.out.println(s1.maxProfit(new int[] { 2, 4, 1 }));
     }
 }
