@@ -5,16 +5,9 @@ class Solution {
         int c=0;
          while(num>0){
              int rem=num%2;
-             if(rem==0){
-                 c=0;
-             }
-             if(rem==1){
-                  if(c==1){
-                      y++;
-                  }else{
-                      c++;
-                  }
-             }
+        
+             if(rem==1 && c==1) y++;
+             c=rem;
              num/=2;
          }
         if(y==1){
