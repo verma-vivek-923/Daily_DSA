@@ -2,8 +2,40 @@ package Blind_75;
 
 import java.util.Arrays;
 
-//Brute Force
+// By PreSum Post Sum method
 class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int arr[] = new int[n];
+        int pre[]=new int[n],suff[]=new int[n];
+        int pref=1,suf=1;
+
+        pre[0]=1;
+        
+        for(int i=1;i<n;i++){
+                pref*=nums[i-1];
+                pre[i]=pref;
+        }
+        System.out.println("Pref="+Arrays.toString(pre));
+        
+        suff[n-1]=1;
+        for(int i=n-2;i>=0;i--){
+            suf*=nums[i+1];
+            suff[i]=suf;
+        }
+        
+        System.out.println("suffs="+Arrays.toString(suff));
+        
+        for(int i=0;i<n;i++){
+            arr[i]=pre[i]*suff[i];
+        }
+        
+        System.out.println("Res="+Arrays.toString(arr));
+        return arr;
+    }
+}
+
+class Solution2 {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int arr[] = new int[n];
