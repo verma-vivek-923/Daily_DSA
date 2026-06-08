@@ -3,8 +3,9 @@ package Blind_75;
 import java.util.Arrays;
 import java.util.HashSet;
 
+
 // BY Hashset method
-class Solution {
+class Solution3 {
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> st = new HashSet<>();
 
