@@ -3,7 +3,8 @@
         ".",
         "Array",
         "Blind_75",
-        "contest_Sunday"
+        "contest_Sunday",
+        "String"
     ],
     "java.project.referencedLibraries": []
 }
