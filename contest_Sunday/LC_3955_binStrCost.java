@@ -1,34 +1,45 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.*;
+
 class Solution {
     public List<String> generateValidStrings(int n, int k) {
-        List<String> str = new ArrayList<>();
 
-        for(int i = 0; i <= n; i++) {
-            int m=i;
-            int sum = 0;
-            int p = 0;
-            // System.out.println("inside"+i);
-            StringBuilder s=new StringBuilder();
-            while (m > 0) {
-                int rem = m % 2;
-                if (rem == 1) {
-                    sum +=( n - p);
+        List<String> ans = new ArrayList<>();
+
+        for (int num = 0; num < (1 << n); num++) {
+
+            int cost = 0;
+            boolean valid = true;
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = n - 1; i >= 0; i--) {
+
+                int bit = (num >> i) & 1;
+                sb.append(bit);
+
+                if (bit == 1) {
+                    cost += (n - 1 - i); // actual index
                 }
-                s.append(rem);
-                p++;
-                m /= 2;
+
+                // Check consecutive 1s
+                if (sb.length() >= 2 &&
+                    sb.charAt(sb.length() - 1) == '1' &&
+                    sb.charAt(sb.length() - 2) == '1') {
+                    valid = false;
+                    break;
+                }
             }
-            System.out.println("str="+s);
-            if (sum <= k) {
-                str.add(String.valueOf(sum));
+
+            if (valid && cost <= k) {
+                ans.add(sb.toString());
             }
         }
-        return str;
+
+        return ans;
     }
 }
-
 public class LC_3955_binStrCost {
     public static void main(String[] args) {
         Solution s1 = new Solution();
