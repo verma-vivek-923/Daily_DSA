@@ -1,5 +1,3 @@
-package Blind_75;
-
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -22,7 +20,7 @@ class Solution3 {
 }
 
 // Sorting Method
-class Solution2 {
+class Solution {
     public boolean containsDuplicate(int[] nums) {
         int arr[] = nums;
 

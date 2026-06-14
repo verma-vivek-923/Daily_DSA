@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public long minEnergy(int n, int brightness, int[][] intervals) {
 

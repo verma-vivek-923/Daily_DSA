@@ -34,7 +34,7 @@ class Solution {
             }
 
             //System.out.println("list=" +
-                    java.util.Arrays.deepToString(newarr.toArray()));
+                    java.util.Arrays.deepToString(newarr.toArray());
 
              if(points.length < 2){
                 return 0;
@@ -98,7 +98,7 @@ public class LC_3923_minGenTarPoint {
 
         
     }
-}
+
 
 
 

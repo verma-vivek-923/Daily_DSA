@@ -1,4 +1,3 @@
-package Blind_75;
 
 import java.util.Arrays;
 
